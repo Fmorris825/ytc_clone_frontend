@@ -31,16 +31,16 @@ const HomePage = () => {
   return (
     <div>
       <Link to="/SearchPage">Go Search</Link>
+      <div className="container">
+        <h1>Home Page for {user.username}!</h1>
+        {cars &&
+          cars.map((car) => (
+            <p key={car.id}>
+              {car.year} {car.model} {car.make}
+            </p>
+          ))}
+      </div>
     </div>
-    // <div className="container">
-    //   <h1>Home Page for {user.username}!</h1>
-    //   {cars &&
-    //     cars.map((car) => (
-    //       <p key={car.id}>
-    //         {car.year} {car.model} {car.make}
-    //       </p>
-    //     ))}
-    // </div>
   );
 };
 
