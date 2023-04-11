@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router-dom";
-
+import { URL_HOST } from "../../urlHost";
 import axios from "axios";
 
 const HomePage = () => {
@@ -16,7 +16,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        let response = await axios.get("http://127.0.0.1:8000/api/cars/", {
+        let response = await axios.get(`${URL_HOST}/api/cars/`, {
           headers: {
             Authorization: "Bearer " + token,
           },
