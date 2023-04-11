@@ -52,7 +52,7 @@ export const AuthProvider = ({ children }) => {
 
   const loginUser = async (loginData) => {
     try {
-      let response = await axios.post(`${BASE_URL}/login/`, loginData);
+      let response = await axios.post(`${BASE_URL}/login`, loginData);
       if (response.status === 200) {
         localStorage.setItem("token", JSON.stringify(response.data.access));
         setToken(JSON.parse(localStorage.getItem("token")));
