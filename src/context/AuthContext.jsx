@@ -20,7 +20,7 @@ function setUserObject(user) {
 }
 
 export const AuthProvider = ({ children }) => {
-  const BASE_URL = `http://ytcbackend-env.eba-nm9x2qaq.us-east-1.elasticbeanstalk.com/api/auth`;
+  const BASE_URL = `https://ytcbackend-env.eba-nm9x2qaq.us-east-1.elasticbeanstalk.com/api/auth`;
   const userToken = JSON.parse(localStorage.getItem("token"));
   const decodedUser = userToken ? jwtDecode(userToken) : null;
   const [token, setToken] = useState(userToken);
